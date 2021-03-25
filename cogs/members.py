@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from ...src import products
+from src.utils import reactions
 
 class MembersCog(commands.Cog):
     def __init__(self, bot):
@@ -15,7 +15,7 @@ class MembersCog(commands.Cog):
     @commands.command(name='coolbot')
     async def cool_bot(self, ctx, *args):
         """Is the bot cool?"""
-        await ctx.send(products.mealify(*args))
+        await ctx.send(reactions.react(*args))
 
     @commands.command(name='top_role', aliases=['toprole'])
     @commands.guild_only()
